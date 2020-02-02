@@ -27,7 +27,7 @@ export default {
 }
 .custom-icon {
   color: #cfcfcf;
-  font-size: 3rem;
+  font-size: 30px;
 }
 .router-link-exact-active > .custom-icon {
   color: #5a9c50;
