@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <common-header></common-header>
+    <router-view></router-view>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import router from './routes/index';
+import CommonHeader from './components/CommonHeader';
+import CommonFooter from './components/CommonFooter';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+    CommonHeader, CommonFooter
+  },
+  router
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 1920px;
+  height: 1080px;
 }
 </style>
