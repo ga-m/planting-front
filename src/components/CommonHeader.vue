@@ -1,29 +1,53 @@
 <template>
   <div class="header">
-    <i class="el-icon-heavy-rain main-icon"></i>
-    <span class="title">Planting</span>
+    <div>
+      <router-link to="/">
+        <img
+          class="custom-icon"
+          src="../icons/images/icon_watering_can.png"
+          alt="home"
+        />
+        <span class="title">Planting</span>
+      </router-link>
+    </div>
     <div class="search-bar">
-      <el-input
-        placeholder="Please input"
-        class="input"
-      >
-        <el-button slot="append" icon="el-icon-search"></el-button>
+      <el-input placeholder="Type something" v-model="searchValue">
+        <i slot="prefix" class="el-input__icon el-icon-search"></i>
       </el-input>
     </div>
+
     <router-link to="/home">
-      <i class="el-icon-s-home custom-icon"></i>
+      <img
+        class="custom-icon"
+        src="../icons/images/icon_new_home_fill_green.png"
+        alt="home"
+      />
     </router-link>
     <router-link to="/follow">
-      <i class="el-icon-star-on custom-icon"></i>
+      <img
+        class="custom-icon"
+        src="../icons/images/icon_heart_fill_green.png"
+        alt="follow"
+      />
     </router-link>
     <router-link to="/setting">
-      <i class="el-icon-s-tools custom-icon"></i>
+      <img
+        class="custom-icon"
+        src="../icons/images/icon_settings_fill_green.png"
+        alt="settings"
+      />
     </router-link>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      searchValue: ''
+    };
+  }
+};
 </script>
 
 <style scoped>
@@ -45,11 +69,10 @@ export default {};
   color: #7f7f7f;
 }
 .custom-icon {
-  color: #cfcfcf;
-  font-size: 30px;
+  width: 30px;
 }
 .router-link-exact-active > .custom-icon {
-  color: #5a9c50;
+  
 }
 .el-input {
   width: 300px;
