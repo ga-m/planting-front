@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="content header-items-wrapper">
-      <div>
+      <div class="header-item header__logo">
         <router-link to="/">
           <img
             class="custom-icon"
@@ -11,28 +11,28 @@
           <span class="title">Planting</span>
         </router-link>
       </div>
-      <div class="search-bar">
-        <el-input placeholder="Type something" v-model="searchValue">
+      <div class="header-item header__search-bar">
+        <el-input class="header__search-bar__input" placeholder="Type something" v-model="searchValue">
           <i slot="prefix" class="el-input__icon el-icon-search"></i>
         </el-input>
       </div>
 
-      <div class="header-right-items">
-        <router-link to="/home">
+      <div class="header-item header__items-right">
+        <router-link to="/home" class="header__right-item">
           <img
             class="custom-icon"
             src="../icons/images/icon_new_home_fill_green.png"
             alt="home"
           />
         </router-link>
-        <router-link to="/follow">
+        <router-link to="/follow" class="header__right-item">
           <img
             class="custom-icon"
             src="../icons/images/icon_heart_fill_green.png"
             alt="follow"
           />
         </router-link>
-        <router-link to="/setting">
+        <router-link to="/setting" class="header__right-item">
           <img
             class="custom-icon"
             src="../icons/images/icon_settings_fill_green.png"
@@ -70,10 +70,26 @@ header {
   align-items: center;
   display: flex;
   margin: 0 auto;
+  padding: 0px;
 }
-.main-icon {
-  color: #979797;
-  font-size: 30px;
+.header-item {
+  display: flex;
+}
+.header__logo {
+  flex: 1;
+  min-width: 70px;
+}
+.header__search-bar {
+  flex: 0 1 auto;
+}
+.header__items-right {
+  flex: 1 0 0%;
+  justify-content: flex-end;
+}
+.header__right-item {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
 }
 .title {
   width: 79px;
@@ -93,5 +109,12 @@ header {
 }
 .el-input {
   width: 300px;
+}
+.header__search-bar__input {
+  width: 266px;
+  /* height: 39px;
+    border-radius: 19.5px;
+  border: solid 1px #cfcfcf;
+  background-color: #ffffff; */
 }
 </style>
