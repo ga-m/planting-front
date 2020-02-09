@@ -4,8 +4,9 @@
       <div class="header-item header__logo">
         <router-link to="/">
           <img
+            id="logo-icon"
             class="custom-icon"
-            src="../icons/images/icon_watering_can.png"
+            src="../icons/images/icon_logo_watering_can.png"
             alt="home"
           />
           <span class="title">Planting</span>
@@ -79,6 +80,9 @@ header {
   flex: 1;
   min-width: 70px;
 }
+#logo-icon {
+  width: 43px;
+}
 .header__search-bar {
   flex: 0 1 auto;
 }
@@ -92,13 +96,15 @@ header {
   padding-left: 15px;
 }
 .title {
-  width: 79px;
-  height: 18px;
+  font-family: HiraginoSansCNS-W6;
   font-size: 18px;
   color: #7f7f7f;
+  padding-left: 5px;
 }
 .custom-icon {
-  width: 30px;
+  width: 26px;
+  opacity: 0.7;
+  border-radius: 1px;
 }
 .router-link-exact-active > .custom-icon {
   

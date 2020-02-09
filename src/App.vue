@@ -30,6 +30,9 @@ export default {
   padding: 0;
   /* font-size: 10px; */
 }
+a {
+  text-decoration: none;
+}
 section {
   width: 100%;
   height: 100%;
