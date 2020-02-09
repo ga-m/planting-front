@@ -1,6 +1,8 @@
 <template>
   <div class="footer">
-    <span class="copyright">Copyrightⓒ2020 GAM All rights reserved.</span>
+    <div class="content footer-items-wrapper">
+      <span class="copyright">Copyrightⓒ2020 GAM All rights reserved.</span>
+    </div>
   </div>
 </template>
 
@@ -10,13 +12,22 @@ export default {};
 
 <style scoped>
 .footer {
-  width: 1920px;
+  width: 100%;
   height: 75px;
   box-shadow: 0 0 10px 0 rgba(148, 148, 148, 0.5);
 }
+.footer-items-wrapper { 
+  max-width: 1060px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+}
 .copyright {
-  width: 376px;
+  width: 100%;
   height: 21px;
   color: #7f7f7f;
+  text-align: center;
 }
 </style>
