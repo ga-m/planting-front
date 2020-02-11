@@ -18,22 +18,22 @@
         </el-input>
       </div>
 
-      <div class="header-item header__items-right">
-        <router-link to="/home" class="header__right-item">
+      <div class="header-item header__menus">
+        <router-link to="/home" class="header__menus__item">
           <img
             class="custom-icon"
             src="../icons/images/icon_new_home_fill_green.png"
             alt="home"
           />
         </router-link>
-        <router-link to="/follow" class="header__right-item">
+        <router-link to="/follow" class="header__menus__item">
           <img
             class="custom-icon"
             src="../icons/images/icon_heart_fill_green.png"
             alt="follow"
           />
         </router-link>
-        <router-link to="/setting" class="header__right-item">
+        <router-link to="/setting" class="header__menus__item">
           <img
             class="custom-icon"
             src="../icons/images/icon_settings_fill_green.png"
@@ -86,11 +86,11 @@ header {
 .header__search-bar {
   flex: 0 1 auto;
 }
-.header__items-right {
+.header__menus {
   flex: 1 0 0%;
   justify-content: flex-end;
 }
-.header__right-item {
+.header__menus__item {
   display: flex;
   flex-direction: column;
   padding-left: 15px;
@@ -108,10 +108,6 @@ header {
 }
 .router-link-exact-active > .custom-icon {
   
-}
-.header-right-items {
-  /* TODO: 클래스 명칭 고민 및 작성 필요 */
-
 }
 .el-input {
   width: 300px;

@@ -1,9 +1,9 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
     <div class="content footer-items-wrapper">
       <span class="copyright">Copyrightⓒ2020 GAM All rights reserved.</span>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
