@@ -2,7 +2,7 @@
   <section class="login">
     <section class="login-content">
       <form class="login-form">
-        <router-link to="/"><img class="main-logo" src="../icons/images/main_logo.png" /></router-link>
+        <main-logo></main-logo>
         <el-input class="login-input" v-model="email"></el-input>
         <el-input
           type="password"
@@ -12,9 +12,9 @@
         ></el-input>
         <button class="login-button">Log in</button>
         <div class="login-info">
-          <a>Sign Up</a>
+          <router-link to="/join" style="color: #7f7f7f;">Sign Up</router-link>
           •
-          <a>Forgot Password ?</a>
+          <router-link to="/find" style="color: #7f7f7f;">Forgot Password ?</router-link>
         </div>
       </form>
     </section>
@@ -26,9 +26,11 @@
 
 <script>
 import CommonFooter from '../components/CommonFooter';
+import MainLogo from '../components/MainLogo';
 export default {
   components: {
-    CommonFooter
+    CommonFooter,
+    MainLogo
   },
   data() {
     return {
@@ -43,10 +45,6 @@ export default {
 </script>
 
 <style scoped>
-.main-logo {
-  width: 370px;
-  height: 200px;
-}
 .login {
   display: flex;
   justify-content: center;
