@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <common-header></common-header>
-    <router-view></router-view>
-    <common-footer></common-footer>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
 import router from './routes/index';
-import CommonHeader from './components/CommonHeader';
-import CommonFooter from './components/CommonFooter';
-
 export default {
   name: 'app',
-  components: {
-    CommonHeader, CommonFooter
-  },
   router
 }
 </script>
 
 <style>
-#app {
-  width: 1920px;
-  height: 1080px;
+#root, body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* font-size: 10px; */
+}
+a {
+  text-decoration: none;
+}
+section {
+  width: 100%;
+  height: 100%;
+}
+main {
+  padding-top: 75px; /* TODO: scss로 푼다면 header-height로 */
+  /* background-color: #eee; */
 }
 </style>
