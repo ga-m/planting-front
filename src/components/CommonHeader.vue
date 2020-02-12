@@ -19,21 +19,21 @@
       </div>
 
       <div class="header-item header__menus">
-        <router-link to="/home" class="header__menus__item">
+        <router-link to="/home/main" class="header__menus__item">
           <img
             class="custom-icon"
             src="../icons/images/icon_new_home_fill_green.png"
             alt="home"
           />
         </router-link>
-        <router-link to="/follow" class="header__menus__item">
+        <router-link to="/home/follow" class="header__menus__item">
           <img
             class="custom-icon"
             src="../icons/images/icon_heart_fill_green.png"
             alt="follow"
           />
         </router-link>
-        <router-link to="/setting" class="header__menus__item">
+        <router-link to="/home/setting" class="header__menus__item">
           <img
             class="custom-icon"
             src="../icons/images/icon_settings_fill_green.png"

@@ -1,22 +1,20 @@
 <template>
   <div>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
-    <p>Setting</p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
+    <p><router-link to="/login">go to login page</router-link></p>
   </div>
 </template>
 
