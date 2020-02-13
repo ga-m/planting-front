@@ -39,7 +39,8 @@ export default {
     };
   },
   methods: {
-    login() {}
+    login() {
+    }
   }
 };
 </script>
@@ -64,6 +65,7 @@ export default {
 }
 .login-form {
   width: 100%;
+  margin-bottom: 100px;
 }
 .login-input {
   margin-top: 10px;
