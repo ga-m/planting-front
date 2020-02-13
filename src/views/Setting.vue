@@ -12,7 +12,9 @@
         </el-menu>
       </el-aside>
       <el-container style="width: 100%; height: 100%;">
-        <router-view></router-view>
+        <section class="setting-content">
+          <router-view></router-view>
+        </section>
       </el-container>
     </el-container>
   </section>
@@ -35,5 +37,9 @@ export default {};
 
 .el-menu-item {
   text-align: center;
+}
+
+.setting-content {
+  overflow: auto;
 }
 </style>
