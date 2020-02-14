@@ -3,9 +3,7 @@
     <section class="find-content">
       <main-logo></main-logo>
     </section>
-    <div class="find-footer">
-      <common-footer></common-footer>
-    </div>
+    <common-footer></common-footer>
   </section>
 </template>
 
@@ -16,26 +14,24 @@ export default {
   components: {
     CommonFooter,
     MainLogo
-  },
-}
+  }
+};
 </script>
 
 <style scoped>
 .find {
   display: flex;
+  min-height: 100vh;
   justify-content: center;
+  flex-direction: column;
 }
 .find-content {
   max-width: 370px;
-  max-height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-}
-.find-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  flex: 1;
+  margin-bottom: 75px;
 }
 </style>

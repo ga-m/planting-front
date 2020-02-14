@@ -14,13 +14,13 @@
         <div class="login-info">
           <router-link to="/join" style="color: #7f7f7f;">Sign Up</router-link>
           •
-          <router-link to="/find" style="color: #7f7f7f;">Forgot Password ?</router-link>
+          <router-link to="/find" style="color: #7f7f7f;"
+            >Forgot Password ?</router-link
+          >
         </div>
       </form>
     </section>
-    <div class="login-footer">
-      <common-footer></common-footer>
-    </div>
+    <common-footer></common-footer>
   </section>
 </template>
 
@@ -39,8 +39,7 @@ export default {
     };
   },
   methods: {
-    login() {
-    }
+    login() {}
   }
 };
 </script>
@@ -49,23 +48,20 @@ export default {
 .login {
   display: flex;
   justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
 }
 .login-content {
   max-width: 370px;
-  max-height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-}
-.login-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  flex: 1;
 }
 .login-form {
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 75px;
 }
 .login-input {
   margin-top: 10px;
@@ -78,11 +74,6 @@ export default {
 
   font-family: HiraginoSansCNS-W6;
   font-size: 21px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   text-align: center;
   color: #ffffff;
 }
@@ -90,11 +81,6 @@ export default {
   margin-top: 10px;
   font-family: AppleSDGothicNeo;
   font-size: 21px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   text-align: center;
   color: #7f7f7f;
 }

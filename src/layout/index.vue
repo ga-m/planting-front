@@ -3,7 +3,7 @@
     <common-header></common-header>
     <main role="main">
       <section class="content">
-          <router-view />
+        <router-view />
       </section>
     </main>
     <common-footer></common-footer>
@@ -24,7 +24,8 @@ export default {
 </script>
 
 <style scoped>
-.content { /* TODO: Header, footer와 중복되는 style */
+.content {
+  /* TODO: Header, footer와 중복되는 style */
   max-width: 1060px;
   width: 100%;
   height: 100%;

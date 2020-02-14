@@ -7,14 +7,24 @@ import router from './routes/index';
 export default {
   name: 'app',
   router
-}
+};
 </script>
 
 <style>
-#root, body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
+  /* font-size: 10px; */
+}
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   /* font-size: 10px; */
 }
 a {
@@ -25,6 +35,7 @@ section {
   height: 100%;
 }
 main {
+  flex: 1;
   padding-top: 75px; /* TODO: scss로 푼다면 header-height로 */
   /* background-color: #eee; */
 }
