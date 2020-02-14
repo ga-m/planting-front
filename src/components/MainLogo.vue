@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 .main-logo {
-  width: 370px;
-  height: 200px;
+  /* width: 370px;
+  height: 200px; */
 }
 </style>

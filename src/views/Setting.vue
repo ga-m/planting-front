@@ -38,7 +38,7 @@ export default {};
 
 <style scoped>
 .el-container {
-  max-height: 900px;
+  height: calc(100vh - 150px);
   border: 1px solid #eee;
 }
 
