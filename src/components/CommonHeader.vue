@@ -86,6 +86,7 @@ header {
   background-color: #ffffff;
   display: flex;
   position: fixed;
+  z-index: 999;
 }
 .header-items-wrapper {
   max-width: 1060px;
