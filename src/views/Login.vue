@@ -2,7 +2,7 @@
   <section class="login">
     <section class="login-content">
       <form class="login-form">
-        <router-link to="/"><img class="main-logo" src="../icons/images/main_logo.png" /></router-link>
+        <main-logo></main-logo>
         <el-input class="login-input" v-model="email"></el-input>
         <el-input
           type="password"
@@ -12,23 +12,25 @@
         ></el-input>
         <button class="login-button">Log in</button>
         <div class="login-info">
-          <a>Sign Up</a>
+          <router-link to="/join" style="color: #7f7f7f;">Sign Up</router-link>
           •
-          <a>Forgot Password ?</a>
+          <router-link to="/find" style="color: #7f7f7f;"
+            >Forgot Password ?</router-link
+          >
         </div>
       </form>
     </section>
-    <div class="login-footer">
-      <common-footer></common-footer>
-    </div>
+    <common-footer></common-footer>
   </section>
 </template>
 
 <script>
 import CommonFooter from '../components/CommonFooter';
+import MainLogo from '../components/MainLogo';
 export default {
   components: {
-    CommonFooter
+    CommonFooter,
+    MainLogo
   },
   data() {
     return {
@@ -43,29 +45,23 @@ export default {
 </script>
 
 <style scoped>
-.main-logo {
-  width: 370px;
-  height: 200px;
-}
 .login {
   display: flex;
   justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
 }
 .login-content {
   max-width: 370px;
-  max-height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-}
-.login-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  flex: 1;
 }
 .login-form {
   width: 100%;
+  margin-bottom: 75px;
 }
 .login-input {
   margin-top: 10px;
@@ -78,11 +74,6 @@ export default {
 
   font-family: HiraginoSansCNS-W6;
   font-size: 21px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   text-align: center;
   color: #ffffff;
 }
@@ -90,11 +81,6 @@ export default {
   margin-top: 10px;
   font-family: AppleSDGothicNeo;
   font-size: 21px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   text-align: center;
   color: #7f7f7f;
 }
