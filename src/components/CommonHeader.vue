@@ -126,9 +126,9 @@ header {
   padding-left: 5px;
 }
 .custom-icon {
-  width: 26px;
-  opacity: 0.7;
-  border-radius: 1px;
+  width: 30px;
+  /* opacity: 0.7; */
+  /* border-radius: 1px; */
 }
 .router-link-exact-active > .custom-icon {
   

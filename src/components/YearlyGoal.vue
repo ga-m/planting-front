@@ -4,14 +4,20 @@
             <div class="goal__header">
                 <div class="goal-header__title">
                     <img class="goal-title__icon" src="../icons/images/icon_bud.png">
-                    <div class="goal-title__text">밥 잘 묵기<span class="goal-title__text-completed">!</span></div>
+                    <div class="cm-left-padding cm-goal-header__text goal-title__text">
+                        <span class="goal-title__text__name">목표가 너무너무 길어지면 ... 처리를 합니다 이 경우 Mouse up을 할 때 tooltip으로 Full name을 보여주면 좋겠네요.</span>
+                    </div>
+                    <div class="cm-left-padding cm-goal-header__text">
+                        <span class="goal-title__text__completed">!</span>
+                    </div>
                 </div>
                 <div class="goal-header__right-items">
-                    <div class="right-items__like">
-                        <img class="goal-like__icon" src="../icons/images/icon_heart_fill_pink.png">
-                        <span class="goal-like__number"></span>
+                    <div class="goal-header__right-items__like">
+                        <img class="cm-left-padding goal-like__icon" src="../icons/images/icon_heart_fill_pink.png">
+                        <span class="cm-left-padding cm-goal-header__text goal-like__number">43434343</span> <!-- TODO: 길어지면 10K 등으로 표현하기. 4자리 까지만 -->
                     </div>
-                    <div class="right-items__drop-down">
+                    <div class="cm-left-padding goal-header__right-items__drop-down">
+                        <img class="goal-like__icon" src="../icons/images/icon_drop_down_btn.png">
                         <!-- 버튼 -->
                         <!-- Dropdown -->
                     </div>
@@ -33,4 +39,72 @@ export default {
 </script>
 
 <style>
+.cm-left-padding {
+    /* Common - Goal title의 요소 사이 간격 */
+    padding-left: 15px;
+}
+.goal__header {
+    display: flex;
+    height: 45px;
+    padding-bottom: 10px;
+}
+.goal__header img {
+    height: 45px;
+}
+.cm-goal-header__text {
+    /* Common - Goal Title의 text 요소의 높이 */
+    margin-top: 5px;
+}
+.goal-header__title {
+    width: 50%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.goal-title__text {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.goal-title__text__name { 
+    font-family: AppleSDGothicNeo;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #192418;
+}
+.goal-title__text__completed {
+    color: red;
+    font-weight: 900;
+    font-size: 24px;
+}
+.goal-header__right-items {
+    flex: 1 0 0%;
+    justify-content: flex-end;
+    display: flex;
+}
+.goal-header__right-items__like {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.goal-like__number {
+    font-family: HiraginoSansCNS-W3;
+    font-size: 21px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #192418;
+}
+.goal__graph {
+    height: 205px;
+    border: solid 1px #cfcfcf;
+    background-color: #ffffff;
+}
 </style>

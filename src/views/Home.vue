@@ -12,7 +12,6 @@ export default {
     components: {
         YearlyGoal,
         UserInfo,
-        
     },
 
 }
@@ -23,5 +22,4 @@ export default {
   width: 100%;
   position: relative;
 }
-
 </style>

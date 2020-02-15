@@ -3,7 +3,7 @@
         <div class="user-info__nickname">
             <router-link class="nickname-wrapper" to="/home/setting/member">
                 <img id="user-image" src="../icons/images/icon_heart_fill_pink.png">
-                <div id="user-nickname">deepweller</div>
+                <div id="user-nickname">Nickname</div>
             </router-link>
         </div>
         <div class="user-info__goal-related">
@@ -25,8 +25,8 @@ export default {
 
 <style>
 .user-info-area {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 45px;
+    margin-bottom: 45px;
     width: 100%;
     height: 45px;
     display: flex;
@@ -44,17 +44,17 @@ export default {
     width: 45px;
 }
 #user-nickname {
-  /* width: 123px;
-  height: 21px; */
-  font-family: HiraginoSansCNS-W6;
-  /* font-size: 21px; */ 
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #192418;
-  padding-left: 7px;
+    /* width: 123px;
+    height: 21px; */
+    font-family: HiraginoSansCNS-W6;
+    font-size: 21px; 
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #192418;
+    padding-left: 10px;
 }
 .user-info__goal-related {
     justify-content: flex-end;
@@ -63,23 +63,24 @@ export default {
 }
 .button {
     /* TODO: Common Component */
-  width: 90px;
-  height: 45px;
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
+    width: 90px;
+    height: 45px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 .button > span {
-  font-family: AppleSDGothicNeo;
-  font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
-  margin: 0 auto;
+    font-family: AppleSDGothicNeo;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 auto;
 }
 .button-green { 
     /* sass로 관리 가능(lighter-light-green-dark-darker) */
