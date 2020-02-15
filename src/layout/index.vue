@@ -29,7 +29,6 @@ export default {
   max-width: 1060px;
   width: 100%;
   height: 100%;
-  align-items: center;
   display: flex;
   margin: 0 auto;
 }
