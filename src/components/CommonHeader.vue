@@ -89,7 +89,7 @@ header {
   z-index: 999;
 }
 .header-items-wrapper {
-  max-width: 1060px;
+  max-width: 1160px;
   width: 100%;
   height: 100%;
   align-items: center;

@@ -2,6 +2,7 @@
   <div class="home-content">
     <user-info></user-info>
     <yearly-goal></yearly-goal>
+    <yearly-goal></yearly-goal>
   </div>
 </template>
 

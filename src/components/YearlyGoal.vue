@@ -25,7 +25,7 @@
             </div>
             <div class="goal__graph">
                 <div class="js-goal-graph">
-                    <!-- SVG 그래프 --> 
+                    <img src="./goal-calendar.svg">
                 </div>
             </div>
         </div>
@@ -39,6 +39,9 @@ export default {
 </script>
 
 <style>
+.goal {
+    padding-bottom: 45px;
+}
 .cm-left-padding {
     /* Common - Goal title의 요소 사이 간격 */
     padding-left: 15px;

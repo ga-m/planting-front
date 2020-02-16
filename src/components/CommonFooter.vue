@@ -17,7 +17,7 @@ export default {};
   box-shadow: 0 0 10px 0 rgba(148, 148, 148, 0.5);
 }
 .footer-items-wrapper { 
-  max-width: 1060px;
+  max-width: 1160px;
   width: 100%;
   height: 100%;
   align-items: center;

@@ -26,7 +26,7 @@ export default {
 <style scoped>
 .content {
   /* TODO: Header, footer와 중복되는 style */
-  max-width: 1060px;
+  max-width: 1160px;
   width: 100%;
   height: 100%;
   display: flex;
