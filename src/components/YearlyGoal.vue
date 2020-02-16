@@ -17,9 +17,13 @@
                         <span class="cm-left-padding cm-goal-header__text goal-like__number">43434343</span> <!-- TODO: 길어지면 10K 등으로 표현하기. 4자리 까지만 -->
                     </div>
                     <div class="cm-left-padding goal-header__right-items__drop-down">
-                        <img class="goal-like__icon" src="../icons/images/icon_drop_down_btn.png">
-                        <!-- 버튼 -->
-                        <!-- Dropdown -->
+                        <el-dropdown trigger="click">
+                            <img class="el-dropdown-link goal-like__icon" src="../icons/images/icon_drop_down_btn.png">
+                            <el-dropdown-menu slot="dropdown">
+                                <el-dropdown-item>편집하기</el-dropdown-item>
+                                <el-dropdown-item>공유하기</el-dropdown-item>
+                            </el-dropdown-menu>
+                        </el-dropdown>
                     </div>
                 </div>
             </div>
@@ -95,6 +99,9 @@ export default {
     align-items: center;
     padding-left: 10px;
 }
+.goal-like__icon {
+    cursor: pointer;
+}
 .goal-like__number {
     font-family: HiraginoSansCNS-W3;
     font-size: 21px;
@@ -109,5 +116,16 @@ export default {
     height: 205px;
     border: solid 1px #cfcfcf;
     background-color: #ffffff;
+}
+
+/**
+* Element-ui Customizing
+*/
+.el-popper {
+    margin: 0px!important;
+    z-index: 998!important;
+}
+.popper__arrow {
+    display: none!important;
 }
 </style>
