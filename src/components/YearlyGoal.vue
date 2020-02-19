@@ -29,7 +29,7 @@
             </div>
             <div class="goal__graph">
                 <div class="js-goal-graph">
-                    <img src="./goal-calendar.svg">
+                    <!-- <img src="../js/goal-graph/goal-calendar.svg"> -->
                 </div>
             </div>
         </div>
@@ -37,6 +37,13 @@
 </template>
 
 <script>
+
+// TODO: Test 실행 코드 
+import GoalGraph from '../js/goal-graph/main.js';
+
+var graph = new GoalGraph();
+graph.draw();
+
 export default {
 
 }
@@ -117,9 +124,14 @@ export default {
     border: solid 1px #cfcfcf;
     background-color: #ffffff;
 }
+.js-goal-graph {
+    width: 100%;
+    height: 100%;
+}
 
 /**
 * Element-ui Customizing
+* TODO: 디자인 일관성을 위해 공통으로 관리할 필요성
 */
 .el-popper {
     margin: 0px!important;
