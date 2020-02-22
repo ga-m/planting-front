@@ -1,5 +1,5 @@
 <!-- Test용 SVG (삭제 예정) -->
-<svg xmlns="http://www.w3.org/2000/svg" width="1300px" height="200px" class="js-goal-graph-svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="1300px" height="200px">
   <g transform="translate(67, 36)">
       <g transform="translate(0, 0)">
           <rect class="day" width="17" height="17" x="10" y="0" fill="#ebedf0" data-count="0" data-date="2019-02-17"></rect>

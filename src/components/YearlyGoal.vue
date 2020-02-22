@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="goal__graph">
-                <div class="js-goal-graph">
+                <div class="goal-graph__container">
                     <!-- <img src="../js/goal-graph/goal-calendar.svg"> -->
                 </div>
             </div>
@@ -37,12 +37,26 @@
 </template>
 
 <script>
-
-// TODO: Test 실행 코드 
 import GoalGraph from '../js/goal-graph/main.js';
+import testJsonData from '../js/goal-graph/testData.json'; //날짜, 단계 정보 테스트 데이터
 
-var graph = new GoalGraph();
-graph.draw();
+var dataExample = testJsonData;
+
+var graph = new GoalGraph({
+    container: '.goal-graph__container',
+    startX: 67,
+    startY: 36,
+    tileSize: 17,
+    tileInterval: 3,
+    data: dataExample,
+});
+
+window.addEventListener("load", function(event) {
+    // here is the Vue code
+    graph.draw();
+    //TODO 다른 방법 없을까
+  });
+
 
 export default {
 
@@ -124,7 +138,7 @@ export default {
     border: solid 1px #cfcfcf;
     background-color: #ffffff;
 }
-.js-goal-graph {
+.goal-graph__container {
     width: 100%;
     height: 100%;
 }
