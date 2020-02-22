@@ -5,7 +5,7 @@
                 <div class="goal-header__title">
                     <img class="goal-title__icon" src="../icons/images/icon_bud.png">
                     <div class="cm-left-padding cm-goal-header__text goal-title__text">
-                        <span class="goal-title__text__name">목표가 너무너무 길어지면 ... 처리를 합니다 이 경우 Mouse up을 할 때 tooltip으로 Full name을 보여주면 좋겠네요.</span>
+                        <span class="goal-title__text__name">{{ goalInfo.title }}</span>
                     </div>
                     <div class="cm-left-padding cm-goal-header__text">
                         <span class="goal-title__text__completed">!</span>
@@ -14,7 +14,7 @@
                 <div class="goal-header__right-items">
                     <div class="goal-header__right-items__like">
                         <img class="cm-left-padding goal-like__icon" src="../icons/images/icon_heart_fill_pink.png">
-                        <span class="cm-left-padding cm-goal-header__text goal-like__number">43434343</span> <!-- TODO: 길어지면 10K 등으로 표현하기. 4자리 까지만 -->
+                        <span class="cm-left-padding cm-goal-header__text goal-like__number">{{ goalInfo.followerCnt }}</span> <!-- TODO: 길어지면 10K 등으로 표현하기. 4자리 까지만 -->
                     </div>
                     <div class="cm-left-padding goal-header__right-items__drop-down">
                         <el-dropdown trigger="click">
@@ -28,42 +28,22 @@
                 </div>
             </div>
             <div class="goal__graph">
-                <div class="goal-graph__container">
-                    <!-- <img src="../js/goal-graph/goal-calendar.svg"> -->
-                </div>
+                <goal-graph :calendarData="goalInfo.testJsonData" :goalId="goalInfo.id"></goal-graph>    
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import GoalGraph from '../js/goal-graph/main.js';
-import testJsonData from '../js/goal-graph/testData.json'; //날짜, 단계 정보 테스트 데이터
-
-var dataExample = testJsonData;
-
-var graph = new GoalGraph({
-    container: '.goal-graph__container',
-    startX: 67,
-    startY: 36,
-    tileSize: 17,
-    tileInterval: 3,
-    data: dataExample,
-});
-
-window.addEventListener("load", function(event) {
-    // here is the Vue code
-    graph.draw();
-    //TODO 다른 방법 없을까
-  });
-
+import GoalGraph from './GoalGraph';
 
 export default {
-
+    components: {GoalGraph},
+    props: ['goalInfo'],
 }
 </script>
 
-<style>
+<style scoped>
 .goal {
     padding-bottom: 45px;
 }
@@ -90,7 +70,6 @@ export default {
     align-items: center;
 }
 .goal-title__text {
-    width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -137,10 +116,6 @@ export default {
     height: 205px;
     border: solid 1px #cfcfcf;
     background-color: #ffffff;
-}
-.goal-graph__container {
-    width: 100%;
-    height: 100%;
 }
 
 /**
