@@ -1,6 +1,6 @@
 <template>
   <div class="home-content">
-    <user-info></user-info>
+    <home-top></home-top>
     <ul>
       <li v-for="goal in goals">
         <yearly-goal :goalInfo="goal"></yearly-goal>
@@ -10,14 +10,14 @@
 </template>
 
 <script>
-import UserInfo from '../components/UserInfo.vue';
+import HomeTop from '../components/HomeTop.vue';
 import YearlyGoal from '../components/YearlyGoal.vue';
 import testJsonData from '../js/goal-graph/testData.json'; //날짜, 단계 정보 테스트 데이터
 
 export default {
   components: {
     YearlyGoal,
-    UserInfo
+    HomeTop
   },
   created() {
     this.goals = this.getGoals();
