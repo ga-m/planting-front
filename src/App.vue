@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import router from './routes/index';
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+  router
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* font-size: 10px; */
+}
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  /* font-size: 10px; */
+}
+a {
+  text-decoration: none;
+}
+section {
+  width: 100%;
+  height: 100%;
+}
+main {
+  flex: 1;
+  padding-top: 75px; /* TODO: scss로 푼다면 header-height로 */
+  /* background-color: #eee; */
 }
 </style>
