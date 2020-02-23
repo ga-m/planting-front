@@ -117,16 +117,4 @@ export default {
     border: solid 1px #cfcfcf;
     background-color: #ffffff;
 }
-
-/**
-* Element-ui Customizing
-* TODO: 디자인 일관성을 위해 공통으로 관리할 필요성
-*/
-.el-popper {
-    margin: 0px!important;
-    z-index: 998!important;
-}
-.popper__arrow {
-    display: none!important;
-}
 </style>
