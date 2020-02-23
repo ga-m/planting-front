@@ -63,22 +63,6 @@ const setTransform = (elementSelector, x, y)  => {
     })
 };
 
-// const createRectElement = (container, x, y, width, height) => {
-//     var rect = document.createElementNS(svgns, 'rect');
-
-//     if (typeof attributes === 'object') {
-//         setAttrs(el, attributes);
-//     }
-//     rect.setAttribute(null, 'x', x);
-//     rect.setAttrbitue(null, 'y', y);
-//     rect.setAttribute(null, 'width', width);
-//     rect.setAttribute(null, 'height', height)
-    
-//     if(typeof container !== 'undefined') {
-//         container.appendChile(rect);
-//     }
-// };
-
 export {
     createSVGElement, setAttrs, removeAttrs, setTransform
 };

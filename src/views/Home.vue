@@ -70,5 +70,7 @@ export default {
 
 ul {
   list-style: none;
+  padding-inline-start: 0px;
+
 }
 </style>
