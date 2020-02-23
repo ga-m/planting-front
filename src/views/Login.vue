@@ -1,8 +1,8 @@
 <template>
   <section class="login">
-    <section class="login-content">
+    <div class="login-content">
+    <main-logo></main-logo>
       <form class="login-form">
-        <main-logo></main-logo>
         <el-input class="login-input" v-model="email"></el-input>
         <el-input
           type="password"
@@ -19,7 +19,7 @@
           >
         </div>
       </form>
-    </section>
+      </div>
     <common-footer></common-footer>
   </section>
 </template>
@@ -48,22 +48,24 @@ export default {
 .login {
   display: flex;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
   flex-direction: column;
 }
 .login-content {
-  max-width: 370px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .login-form {
+  max-width: 370px;
+  align-self: center;
   width: 100%;
   margin-bottom: 75px;
 }
 .login-input {
+  width: 100%;
   margin-top: 10px;
 }
 .login-button {
