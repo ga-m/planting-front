@@ -89,7 +89,7 @@ header {
   z-index: 999;
 }
 .header-items-wrapper {
-  max-width: 1060px;
+  max-width: 1160px;
   width: 100%;
   height: 100%;
   align-items: center;
@@ -126,9 +126,9 @@ header {
   padding-left: 5px;
 }
 .custom-icon {
-  width: 26px;
-  opacity: 0.7;
-  border-radius: 1px;
+  width: 30px;
+  /* opacity: 0.7; */
+  /* border-radius: 1px; */
 }
 .router-link-exact-active > .custom-icon {
   
