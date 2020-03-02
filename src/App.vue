@@ -50,4 +50,12 @@ main {
 .popper__arrow {
     display: none!important;
 }
+
+/**
+ * Common Style
+ */
+ul {
+  list-style: none;
+  padding-inline-start: 0px;
+}
 </style>

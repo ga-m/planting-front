@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 .user-info__nickname {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
 }
 .nickname-wrapper {

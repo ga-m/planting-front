@@ -68,8 +68,5 @@ export default {
   position: relative;
 }
 
-ul {
-  list-style: none;
-  padding-inline-start: 0px;
-}
+
 </style>
