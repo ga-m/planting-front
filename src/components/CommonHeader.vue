@@ -13,32 +13,21 @@
         </router-link>
       </div>
       <div class="header-item header__search-bar">
-        <el-input class="header__search-bar__input" placeholder="Type something" v-model="searchValue">
+        <search class="header__search-bar__input"></search>
+        <!-- <el-input class="header__search-bar__input" placeholder="Type something" v-model="searchValue">
           <i slot="prefix" class="el-input__icon el-icon-search"></i>
-        </el-input>
+        </el-input> -->
       </div>
 
       <div class="header-item header__menus">
         <router-link to="/home/main" class="header__menus__item">
-          <img
-            class="custom-icon"
-            :src="homeIcon"
-            alt="home"
-          />
+          <img class="custom-icon" :src="homeIcon" alt="home" />
         </router-link>
         <router-link to="/home/follow" class="header__menus__item">
-          <img
-            class="custom-icon"
-            :src="followIcon"
-            alt="follow"
-          />
+          <img class="custom-icon" :src="followIcon" alt="follow" />
         </router-link>
         <router-link to="/home/setting" class="header__menus__item">
-          <img
-            class="custom-icon"
-            :src="settingIcon"
-            alt="settings"
-          />
+          <img class="custom-icon" :src="settingIcon" alt="settings" />
         </router-link>
       </div>
     </div>
@@ -46,7 +35,11 @@
 </template>
 
 <script>
+import Search from './Search'
 export default {
+  components: {
+    Search
+  },
   data() {
     return {
       searchValue: '',
@@ -54,21 +47,21 @@ export default {
   },
   computed: {
     homeIcon: function() {
-      if(this.$route.path.startsWith('/home/main')) {
+      if (this.$route.path.startsWith('/home/main')) {
         return require('../icons/images/icon_new_home_fill_green.png');
       } else {
         return require('../icons/images/icon_new_home_fill_white.png');
       }
     },
     followIcon: function() {
-      if(this.$route.path.startsWith('/home/follow')) {
+      if (this.$route.path.startsWith('/home/follow')) {
         return require('../icons/images/icon_heart_fill_green.png');
       } else {
         return require('../icons/images/icon_heart_fill_white.png');
       }
     },
     settingIcon: function() {
-      if(this.$route.path.startsWith('/home/setting')) {
+      if (this.$route.path.startsWith('/home/setting')) {
         return require('../icons/images/icon_settings_fill_green.png');
       } else {
         return require('../icons/images/icon_settings_fill_white.png');
@@ -129,9 +122,6 @@ header {
   width: 30px;
   /* opacity: 0.7; */
   /* border-radius: 1px; */
-}
-.router-link-exact-active > .custom-icon {
-  
 }
 .el-input {
   width: 300px;
