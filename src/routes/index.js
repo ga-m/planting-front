@@ -49,6 +49,11 @@ export const router = new VueRouter({
           name: 'home'
         },
         {
+          path: ':nickname',
+          component: Home,
+          name: 'otherHome'
+        },
+        {
           path: 'follow',
           component: Follow,
           name: 'follow'
