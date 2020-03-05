@@ -82,7 +82,7 @@ export default {
 }
 
 .user-badge {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-right: 10px;
   border-radius: 3px;
   border: solid 1px #cfcfcf;
