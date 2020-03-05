@@ -3,7 +3,6 @@
     v-model="state"
     :fetch-suggestions="querySearchAsync"
     :trigger-on-focus="false"
-    clearable="true"
     placeholder="Search user nickname"
     :debounce=1000
     @select="handleSelect"
@@ -32,7 +31,7 @@ export default {
     },
     handleSelect(item) {
       this.state = '';
-      this.$router.push(`/home/${item.value}`);
+      this.$router.push(`/home/main/${item.value}`);
     }
   }
 };
