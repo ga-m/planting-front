@@ -65,6 +65,7 @@ export default {
 .user-info {
   width: 50%;
   margin-right: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   border-radius: 3px;
@@ -79,11 +80,13 @@ export default {
 .user-info__icon {
   width: 49px;
   height: 45px;
+  margin-right: 10px;
 }
 
 .user-badge {
   margin-top: 20px;
   margin-right: 10px;
+  padding: 20px;
   border-radius: 3px;
   border: solid 1px #cfcfcf;
 }
@@ -92,20 +95,12 @@ export default {
   font-family: AppleSDGothicNeo;
   font-size: 24px;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #192418;
+  margin-right: 10px;
 }
 .content-text {
   font-family: AppleSDGothicNeo;
   font-size: 24px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #192418;
 }
 </style>
