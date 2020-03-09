@@ -1,13 +1,24 @@
 <template>
   <div class="user-info__nickname">
     <div class="nickname-wrapper">
-      <img id="user-image" src="../icons/images/icon_heart_fill_pink.png" />
-      <div id="user-nickname">
+      <img class="user-image" src="../icons/images/icon_heart_fill_pink.png" />
+      <div class="user-nickname">
         <a @click="dialogTableVisible = true">{{ nickname }}</a>
       </div>
-      <el-dialog :title="nickname" :visible.sync="dialogTableVisible">
-      <user-dialog></user-dialog>
-    </el-dialog>
+      <el-dialog :visible.sync="dialogTableVisible">
+        <template v-slot:title>
+          <div class="nickname-wrapper">
+            <img
+              class="user-image"
+              src="../icons/images/icon_heart_fill_pink.png"
+            />
+            <div class="user-nickname">
+              <a @click="dialogTableVisible = true">{{ nickname }}</a>
+            </div>
+          </div>
+        </template>
+        <user-dialog></user-dialog>
+      </el-dialog>
     </div>
   </div>
 </template>
@@ -37,10 +48,10 @@ export default {
   display: flex;
   align-items: center;
 }
-#user-image {
+.user-image {
   width: 45px;
 }
-#user-nickname {
+.user-nickname {
   /* width: 123px;
     height: 21px; */
   font-family: HiraginoSansCNS-W6;

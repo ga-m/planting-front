@@ -46,7 +46,14 @@ export const router = new VueRouter({
         {
           path: 'main',
           component: Home,
-          name: 'home'
+          name: 'myHome',
+          children: [
+            {
+              path: ':nickname',
+              component: Home,
+              name: 'otherHome'
+            }
+          ]
         },
         {
           path: 'follow',
