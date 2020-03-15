@@ -29,7 +29,7 @@ export default {
   components: { UserDialog },
   data() {
     return {
-      nickname: '',
+      // nickname: '',
       dialogTableVisible: false
     };
   },

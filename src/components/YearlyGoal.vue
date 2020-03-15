@@ -1,6 +1,6 @@
 <template>
     <div class="goals-area">
-        <div class="goal">
+        <div class="goal" v-bind:id="goalInfo.id">
             <div class="goal__header">
                 <template v-if="viewName == 'follow'">
                 <user-nickname :nickName="goalInfo.userName"></user-nickname>

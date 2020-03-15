@@ -25,7 +25,7 @@ export default {
       ], // 차례대로 level 0, 1, 2, 3, 4, 5
       data: {}, // Goal 1개의 좌표 정보
 
-      //함수 내에서 정의된 변수
+      // 함수 내에서 정의된 변수
       container: '', // containerSelector를 통해 얻어진 Element
       svg: '', // svg Element
       graphWrapper: '' // svg 내에서 365개의 타일을 감싸주는 <g></g> Element
@@ -122,16 +122,90 @@ export default {
 
     // 타일 하나
     makeTile(container, x, y, tileInfo) {
-      let color = this.plantsColors[tileInfo.level];
 
+      // const labelHolder = this.getLabel(container, x, y, tileInfo); // get el-tooltip
+
+      let color = this.plantsColors[tileInfo.level];
       const rect = createSVGElement('rect', container, {
+        class: 'graph-tile',
         x: x,
         y: y,
         width: this.tileSize,
         height: this.tileSize,
-        fill: color
-        //date, level 등 필요한 정보
+        fill: color,
+        'data-level': tileInfo.level,
+        'data-date': tileInfo.date,
+        'data-goalid': this.goalId,
       });
+
+      this.addClickListener(rect); // Add Click Event Listener 
+    },
+
+    // Mouse-up할 때 날짜 및 Level 정보 보여줌 
+    // 동작 X
+    getLabel(container, x, y, tileInfo) {
+
+      let content = `Level ${tileInfo.level} on ${tileInfo.date}`;
+
+      const labelHolder = createSVGElement('el-tooltip', container, {
+        class: 'label__tile-info',
+        effect: 'dark', 
+        content: content 
+      });
+
+      return labelHolder;
+    },
+
+    // Level 변경 Dropdown 추가
+    addDropdown() {
+      var menuHolder = document.createElement('div');
+      menuHolder.setAttribute('class', 'dropdown__change-level');
+    },
+
+    // Click시 Class 처리
+    addClickListener(element) {
+      
+      //선택한 Goal 내에서만 적용되도록
+      var goalId = element.dataset.goalid;
+      var goalElement = document.getElementById(goalId);
+      
+      this.selectedElement = element; //현재 선택된 elementd저장
+
+      element.addEventListener('click', (event) => {  
+
+        var tileElements = goalElement.getElementsByClassName('graph-tile');
+        
+        var isSelected = false; //true이면 현재 타일 선택되어 있는 상태
+        if(tileElements[0].classList.contains('tile-selected') == true) {
+          isSelected = true;
+        }
+        else {
+          isSelected = false;
+        }
+        
+        if(isSelected) {
+          for(var i = 0; i < tileElements.length; i++) {
+            tileElements[i].setAttribute('class', 'graph-tile');
+            tileElements[i].setAttribute('opacity', '1');
+            console.log("click off");
+          }
+        }
+        else {
+          for(var j = 0; j < tileElements.length; j++) {
+            tileElements[j].setAttribute('class', 'graph-tile tile-selected');
+            tileElements[j].setAttribute('opacity', '.5');
+            console.log("click on");
+          }
+          element.setAttribute('class', 'graph-tile tile-selected active'); //선택된 타일만 Class추가 처리
+          element.setAttribute('opacity', 1);
+        }
+
+      //select한 rect에 대해 .active class 추가
+      //select toggle on : 모든 rect에 .selected -> opacity: .5
+      //select toggle off : remove classes
+      // Dropdown 표시
+      });
+
     },
 
     draw() {
@@ -148,5 +222,14 @@ export default {
 .goal-graph__container {
   width: 100%;
   height: 100%;
+}
+.graph-tile {
+  opacity: 1;
+}
+.graph-tile.tile-selected {
+  opacity: .5;
+}
+.graph-tile.tile-selected.active {
+  opacity: 1;
 }
 </style>
