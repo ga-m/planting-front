@@ -13,6 +13,7 @@
 import HomeTop from '../components/HomeTop.vue';
 import YearlyGoal from '../components/YearlyGoal.vue';
 import testGoalData from '../data/goal.json'; //날짜, 단계 정보 테스트 데이터
+// import testLoginData from '../data/login-info.json'; // 로그인 사용자 정보 
 
 export default {
   components: {

@@ -124,10 +124,11 @@ export default {
     makeTile(container, x, y, tileInfo) {
 
       // const labelHolder = this.getLabel(container, x, y, tileInfo); // get el-tooltip
+      // const dropdownHolder = this.getDropdownHolder(container, x, y, tileInfo); // get el-dropdown
 
       let color = this.plantsColors[tileInfo.level];
       const rect = createSVGElement('rect', container, {
-        class: 'graph-tile',
+        class: 'graph-tile el-dropdown-link',
         x: x,
         y: y,
         width: this.tileSize,
@@ -137,11 +138,12 @@ export default {
         'data-date': tileInfo.date,
         'data-goalid': this.goalId,
       });
-
       this.addClickListener(rect); // Add Click Event Listener 
+
+      // this.getDropdownMenu(dropdownHolder, tileInfo); //add dropdown menu add
     },
 
-    // Mouse-up할 때 날짜 및 Level 정보 보여줌 
+    // get tooltip holder element
     // 동작 X
     getLabel(container, x, y, tileInfo) {
 
@@ -156,10 +158,42 @@ export default {
       return labelHolder;
     },
 
-    // Level 변경 Dropdown 추가
-    addDropdown() {
-      var menuHolder = document.createElement('div');
-      menuHolder.setAttribute('class', 'dropdown__change-level');
+    // get dropdown holder element
+    // 동작 X
+    getDropdownHolder(container, x, y, tileInfo) {
+      
+      const dropdownHolder = createSVGElement('el-dropdown', container, {
+        class: 'dropdown__tile-info',
+        trigger: 'click'
+      });
+
+      return dropdownHolder;
+    },
+
+    // get dropdown menu  
+    // 동작 X
+    getDropdownMenu(container, tileInfo) {
+
+      const dropdownMenu = createSVGElement('el-dropdown-menu', container, {});
+
+      //TODO: 하드코딩 말고 받아온 level 개수만큼 element-item 표시, 선택된 level 표시
+      createSVGElement('el-dropdown-item', dropdownMenu, {
+        'data-content': '1단계'
+      });
+      createSVGElement('el-dropdown-item', dropdownMenu, {
+        'data-content': '2단계'
+      });
+      createSVGElement('el-dropdown-item', dropdownMenu, {
+        'data-content': '3단계'
+      });
+      createSVGElement('el-dropdown-item', dropdownMenu, {
+        'data-content': '4단계'
+      });
+      createSVGElement('el-dropdown-item', dropdownMenu, {
+        'data-content': '5단계'
+      });
+
+      return dropdownMenu;
     },
 
     // Click시 Class 처리
@@ -168,10 +202,18 @@ export default {
       //선택한 Goal 내에서만 적용되도록
       var goalId = element.dataset.goalid;
       var goalElement = document.getElementById(goalId);
-      
-      this.selectedElement = element; //현재 선택된 elementd저장
-
+    
       element.addEventListener('click', (event) => {  
+        // 1. Opacity 조정  
+        this.toggleTileStyle(element, goalElement, goalId);
+
+        // // 2. Dropdown 표시
+        // this.toggleDropdown(element, goalElement, goalId);
+      });
+
+    },
+    
+    toggleTileStyle(selectedTileElement, goalElement, goalId) {
 
         var tileElements = goalElement.getElementsByClassName('graph-tile');
         
@@ -186,26 +228,19 @@ export default {
         if(isSelected) {
           for(var i = 0; i < tileElements.length; i++) {
             tileElements[i].setAttribute('class', 'graph-tile');
-            tileElements[i].setAttribute('opacity', '1');
-            console.log("click off");
+            tileElements[i].setAttribute('opacity', '1'); // TODO: CSS로 할 수 있을 것 같은데.. 안되서 이렇게 함
           }
+          console.log(goalId + " click off");
         }
         else {
           for(var j = 0; j < tileElements.length; j++) {
             tileElements[j].setAttribute('class', 'graph-tile tile-selected');
             tileElements[j].setAttribute('opacity', '.5');
-            console.log("click on");
           }
-          element.setAttribute('class', 'graph-tile tile-selected active'); //선택된 타일만 Class추가 처리
-          element.setAttribute('opacity', 1);
+          console.log(goalId + " click on");
+          selectedTileElement.setAttribute('class', 'graph-tile tile-selected active'); //선택된 타일만 Class 추가 처리
+          selectedTileElement.setAttribute('opacity', 1);
         }
-
-      //select한 rect에 대해 .active class 추가
-      //select toggle on : 모든 rect에 .selected -> opacity: .5
-      //select toggle off : remove classes
-      // Dropdown 표시
-      });
-
     },
 
     draw() {
@@ -223,11 +258,14 @@ export default {
   width: 100%;
   height: 100%;
 }
+/**
+ * TODO: 동작하지 않음.. 
+ */
 .graph-tile {
   opacity: 1;
 }
-.graph-tile.tile-selected {
-  opacity: .5;
+.tile-selected {
+  opacity: .5!important;
 }
 .graph-tile.tile-selected.active {
   opacity: 1;
