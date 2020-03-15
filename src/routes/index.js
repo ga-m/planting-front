@@ -58,7 +58,7 @@ export const router = new VueRouter({
         {
           path: 'follow',
           component: Follow,
-          name: 'follow'
+          name: 'follow',
         },
         {
           path: 'setting',

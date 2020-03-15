@@ -3,7 +3,7 @@
     <div class="nickname-wrapper">
       <img class="user-image" src="../icons/images/icon_heart_fill_pink.png" />
       <div class="user-nickname">
-        <a @click="dialogTableVisible = true">{{ nickname }}</a>
+        <a @click="dialogTableVisible = true">{{ nickName }}</a>
       </div>
       <el-dialog :visible.sync="dialogTableVisible">
         <template v-slot:title>
@@ -13,7 +13,7 @@
               src="../icons/images/icon_heart_fill_pink.png"
             />
             <div class="user-nickname">
-              <a @click="dialogTableVisible = true">{{ nickname }}</a>
+              <a @click="dialogTableVisible = true">{{ nickName }}</a>
             </div>
           </div>
         </template>
@@ -33,8 +33,9 @@ export default {
       dialogTableVisible: false
     };
   },
+  props: ['nickName'],
   created() {
-    this.nickname = 'deepweller';
+    // this.nickname = 'deepweller';
   }
 };
 </script>
@@ -43,6 +44,7 @@ export default {
 .user-info__nickname {
   /* flex: 1; */
   display: flex;
+  padding-right: 10px;
 }
 .nickname-wrapper {
   display: flex;
