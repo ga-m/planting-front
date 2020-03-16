@@ -39,4 +39,23 @@ main {
   padding-top: 75px; /* TODO: scss로 푼다면 header-height로 */
   /* background-color: #eee; */
 }
+
+/**
+* Element-ui Customizing
+*/
+.el-popper {
+    margin: 0px!important;
+    z-index: 998!important;
+}
+.popper__arrow {
+    display: none!important;
+}
+
+/**
+ * Common Style
+ */
+ul {
+  list-style: none;
+  padding-inline-start: 0px;
+}
 </style>

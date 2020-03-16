@@ -1,7 +1,10 @@
 <template>
     <div class="goals-area">
-        <div class="goal">
+        <div class="goal" v-bind:id="goalInfo.id">
             <div class="goal__header">
+                <template v-if="viewName == 'follow'">
+                <user-nickname :nickName="goalInfo.userName"></user-nickname>
+                </template>
                 <div class="goal-header__title">
                     <img class="goal-title__icon" src="../icons/images/icon_bud.png">
                     <div class="cm-left-padding cm-goal-header__text goal-title__text">
@@ -16,6 +19,7 @@
                         <img class="cm-left-padding goal-like__icon" src="../icons/images/icon_heart_fill_pink.png">
                         <span class="cm-left-padding cm-goal-header__text goal-like__number">{{ goalInfo.followerCnt }}</span> <!-- TODO: 길어지면 10K 등으로 표현하기. 4자리 까지만 -->
                     </div>
+                    <template v-if="viewName == 'home'">
                     <div class="cm-left-padding goal-header__right-items__drop-down">
                         <el-dropdown trigger="click">
                             <img class="el-dropdown-link goal-like__icon" src="../icons/images/icon_drop_down_btn.png">
@@ -25,10 +29,16 @@
                             </el-dropdown-menu>
                         </el-dropdown>
                     </div>
+                    </template>
+                    <template v-else-if="viewName == 'follow'">
+                    <div class="cm-left-padding goal-header__right-items__button">
+                        <img class="goal-like__icon" src="../icons/images/icon_drop_down_btn.png"> <!-- TODO: 공유 모양 아이콘으로 교체 필요 -->
+                    </div>
+                    </template>
                 </div>
             </div>
             <div class="goal__graph">
-                <goal-graph :calendarData="goalInfo.testJsonData" :goalId="goalInfo.id"></goal-graph>    
+                <goal-graph :calendarData="goalInfo.testGoalData" :goalId="goalInfo.id"></goal-graph>    
             </div>
         </div>
     </div>
@@ -36,10 +46,16 @@
 
 <script>
 import GoalGraph from './GoalGraph';
+import UserNickname from './UserNickname';
 
 export default {
-    components: {GoalGraph},
-    props: ['goalInfo'],
+    components: {GoalGraph, UserNickname},
+    props: ['goalInfo', 'viewName'],
+    data() {
+        return {
+            dialogTableVisible: false
+        };
+    }
 }
 </script>
 
@@ -116,17 +132,5 @@ export default {
     height: 205px;
     border: solid 1px #cfcfcf;
     background-color: #ffffff;
-}
-
-/**
-* Element-ui Customizing
-* TODO: 디자인 일관성을 위해 공통으로 관리할 필요성
-*/
-.el-popper {
-    margin: 0px!important;
-    z-index: 998!important;
-}
-.popper__arrow {
-    display: none!important;
 }
 </style>

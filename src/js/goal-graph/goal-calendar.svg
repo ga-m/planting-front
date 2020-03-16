@@ -2,7 +2,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1300px" height="200px">
   <g transform="translate(67, 36)">
       <g transform="translate(0, 0)">
+        <el-tooltip effect="dark" content="Level 5 on 2019-02-17">
           <rect class="day" width="17" height="17" x="10" y="0" fill="#ebedf0" data-count="0" data-date="2019-02-17"></rect>
+        </el-tooltip>
           <rect class="day" width="17" height="17" x="10" y="20" fill="#ebedf0" data-count="0" data-date="2019-02-18"></rect>
           <rect class="day" width="17" height="17" x="10" y="40" fill="#ebedf0" data-count="0" data-date="2019-02-19"></rect>
           <rect class="day" width="17" height="17" x="10" y="60" fill="#ebedf0" data-count="0" data-date="2019-02-20"></rect>
